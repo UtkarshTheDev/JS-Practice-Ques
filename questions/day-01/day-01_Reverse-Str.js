@@ -11,3 +11,16 @@
  * - No use of built-in reverse()
  * - Use both iterative and recursive methods
  */
+
+const reverseString = (str) => {
+  // Iterative Approach Done
+    arrStr = str.split("")
+    revArrStr = []
+    for (let i=arrStr.length - 1;i>=0;i--){
+      revArrStr.push(arrStr[i])
+    }
+     revStr = revArrStr.join("")
+     return revStr
+}
+
+console.log(reverseString("Hello"))
