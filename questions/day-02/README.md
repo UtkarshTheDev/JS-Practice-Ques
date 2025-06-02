@@ -13,8 +13,7 @@ Check if two given strings are anagrams of each other.
 
 ```js
 isAnagram("listen", "silent")               // true
-isAnagram("Dormitory", "Dirty room")        // true
-isAnagram("Hi there", "Bye there")          // false
+isAnagram("Hithere", "Byethere")          // false
 ```
 
 ## ⚠️ Constraints:
@@ -27,4 +26,4 @@ isAnagram("Hi there", "Bye there")          // false
  
 #
 #### Status
-**[] Done** 
+**[x] Done** 
