@@ -10,7 +10,7 @@ This folder contains my **daily solutions** to JavaScript coding problems, desig
 Each day I solve one question and push it to this folder. The files are organized like this:
 
 ```
-questions/ ├── day-01.js ├── day-02.js ├── day-03.js ...
+questions/ ├── day-**/README.md && solution.js ──├...
 ```
 
 Each file contains:
@@ -29,7 +29,7 @@ Each file contains:
 
 ---
 
-## 🔥 Example Format (`day-01.js`)
+## 🔥 Example Format (`day-01/solution.js`)
 
 ```js
 // 🚀 Day 01 - Reverse a String
