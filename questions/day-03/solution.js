@@ -10,10 +10,21 @@
  */
 
 const capitalizeWords = (str) => {
-    console.log(`🧠 THOUGHT PROCESS:`);
-    console.log(`   Input: "${str}"`);
-    console.log(`   Approach: Split → Process → Join`);
-    console.log(`   Why this works: Each word gets processed individually\n`);
+    /**
+     * 🧠 THOUGHT PROCESS:
+     * We need to capitalize the first letter of each word while keeping the rest lowercase.
+     * The challenge is handling edge cases like multiple spaces or empty strings.
+     * 
+     * 📋 APPROACH:
+     * 1. Split the string by spaces to get individual words
+     * 2. Process each word: lowercase it, then capitalize first letter
+     * 3. Join the processed words back into a string
+     * 
+     * 💡 WHY THIS WORKS:
+     * - split(" ") breaks the string at spaces, giving us an array of words
+     * - Processing each word individually ensures proper capitalization
+     * - Checking for empty strings prevents undefined errors from multiple spaces
+     */
     
     // Step 1: Split string into individual words
     let words = str.split(" ");
@@ -23,25 +34,25 @@ const capitalizeWords = (str) => {
         let word = words[i];
         
         // Skip empty strings (handles multiple spaces between words)
+        // This prevents undefined errors when accessing word[0]
         if (word){
-            // Convert to lowercase first, then capitalize first letter
+            // Convert entire word to lowercase first for consistency
             word = word.toLowerCase();
+            
+            // Get the first character and make it uppercase
             let capitalize = word[0].toUpperCase();
             
-            // Replace first character with capitalized version
+            // Replace the first character with its capitalized version
             word = word.replace(word[0], capitalize);
             
-            // Update the word in the array
+            // Update the word in the original array
             words[i] = word;
         }
     }
     
-    // Step 3: Join words back into a single string
+    // Step 3: Join words back into a single string with spaces
+    // This preserves the original spacing structure
     str = words.join(" ");
-    
-    console.log(`✅ RESULT: "${str}"`);
-    console.log(`💡 KEY INSIGHT: Empty word check prevents undefined errors`);
-    console.log(`---`);
     
     return str;
 }
