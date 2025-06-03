@@ -10,6 +10,11 @@
  */
 
 const capitalizeWords = (str) => {
+    console.log(`🧠 THOUGHT PROCESS:`);
+    console.log(`   Input: "${str}"`);
+    console.log(`   Approach: Split → Process → Join`);
+    console.log(`   Why this works: Each word gets processed individually\n`);
+    
     // Step 1: Split string into individual words
     let words = str.split(" ");
     
@@ -33,6 +38,11 @@ const capitalizeWords = (str) => {
     
     // Step 3: Join words back into a single string
     str = words.join(" ");
+    
+    console.log(`✅ RESULT: "${str}"`);
+    console.log(`💡 KEY INSIGHT: Empty word check prevents undefined errors`);
+    console.log(`---`);
+    
     return str;
 }
 
