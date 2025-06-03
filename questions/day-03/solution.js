@@ -10,20 +10,49 @@
  */
 
 const capitalizeWords = (str) => {
-    let words = str.split(" ")
-    for(let i=0; i < words.length; i++){
-        let word = words[i]
-        if (word){
-           word = word.toLowerCase()
-           let capitalize = word[0].toUpperCase()
+    console.log(`🔍 INPUT: "${str}"`);
+    console.log("📝 APPROACH: Split string → Process each word → Join back");
+    
+    // Step 1: Split the string into words
+    let words = str.split(" ");
+    console.log(`📊 SPLIT RESULT: [${words.map(w => `"${w}"`).join(', ')}] (${words.length} elements)`);
+    
+    // Step 2: Process each word individually
+    console.log("\n🔄 PROCESSING EACH WORD:");
+    for(let i = 0; i < words.length; i++){
+        let word = words[i];
+        console.log(`  [${i}] Processing: "${word}" (length: ${word.length})`);
         
-           word = word.replace(word[0],capitalize)
-           words[i] = word
+        // Check if word is not empty (handles multiple spaces)
+        if (word){
+            console.log(`    ✅ Word is valid, proceeding with capitalization`);
+            
+            // Convert entire word to lowercase first
+            word = word.toLowerCase();
+            console.log(`    📝 Lowercased: "${word}"`);
+            
+            // Get the first character and capitalize it
+            let capitalize = word[0].toUpperCase();
+            console.log(`    🔤 First char "${word[0]}" → capitalized: "${capitalize}"`);
+            
+            // Replace first character with capitalized version
+            word = word.replace(word[0], capitalize);
+            console.log(`    ✨ Final word: "${word}"`);
+            
+            // Update the array
+            words[i] = word;
+        } else {
+            console.log(`    ⚠️  Empty word detected, skipping...`);
         }
     }
-    str = words.join(" ") 
-    return str
-        
+    
+    // Step 3: Join words back into a string
+    console.log(`\n📋 WORDS ARRAY AFTER PROCESSING: [${words.map(w => `"${w}"`).join(', ')}]`);
+    str = words.join(" ");
+    console.log(`🎯 FINAL RESULT: "${str}"`);
+    console.log("=" .repeat(50));
+    
+    return str;
 }
 
 // 🧪 Test Cases
