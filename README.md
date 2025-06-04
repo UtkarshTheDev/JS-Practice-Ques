@@ -19,7 +19,7 @@ Every day, I:
 ## 🗂️ Folder Structure
 
 ```
-📁 questions/ ├── day-001-two-sum.js ├── day-002-palindrome-check.js ├── day-003-closure-example.js └── ... 📁 explanations/ ├── day-001.md ├── day-002.md └── ...
+📁 questions/ ├── day-01/README.md && solution.js├── day-02/README.md && solution.js ├── day-03/README.md && solution.js └── ...
 ```
 
 > ✨ Each file is named with the day number and question title for easy tracking.
