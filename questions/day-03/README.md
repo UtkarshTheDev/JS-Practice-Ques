@@ -24,4 +24,4 @@ capitalizeWords("UTKARSH tiwari!")     // "Utkarsh Tiwari!"
 - **No use of external libraries**
 
 ### Status 
-- [] Done
+- [x] Done
