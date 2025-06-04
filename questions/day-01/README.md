@@ -32,8 +32,8 @@ Implement both iterative and recursive approaches.
 
 ## 🔥 Status
 
-- [] Problem Solved
+- [x] Problem Solved
 
-- [] Iterative Approach
+- [x] Iterative Approach
 
 - [] Recursive Approach
