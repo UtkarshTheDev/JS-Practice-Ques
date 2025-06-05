@@ -28,4 +28,4 @@ compressString("aaAAaa")      // "a2A2a2"
 
 #### Status
 
-- [] Done
+- [x] Done
