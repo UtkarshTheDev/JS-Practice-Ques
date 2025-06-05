@@ -87,11 +87,6 @@ console.log(compressStr("aaAAaa"));      // "a2A2a2" - compression helps, case-s
 console.log(compressStr(""));            // "" - empty string edge case
 
 /**
- * 🔧 IMPROVEMENTS MADE:
- * 1. Added explicit empty string check at the beginning
- * 2. Changed condition from <= to < for more precise compression logic
- * 3. Added comprehensive comments explaining each step
- * 
  * 💭 KEY INSIGHTS FOR BEGINNERS:
  * - Always handle edge cases (empty strings, single characters)
  * - Boundary checking is crucial when accessing array elements
