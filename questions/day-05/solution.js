@@ -49,7 +49,7 @@ const firstNonRepeatingChar = (str) => {
      * 📊 STEP 1: BUILD FREQUENCY MAP
      * 
      * We count how many times each character appears in the string.
-     * This is more efficient than your original approach because we only
+     * This is more efficient than approach1 because we only
      * scan the string once instead of scanning for each unique character.
      * 
      * Time Complexity: O(n) - single pass through string
@@ -101,9 +101,9 @@ const firstNonRepeatingChar = (str) => {
 }
 
 /**
- * 🔄 COMPARISON: Your Original vs Optimized Approach
+ * 🔄 COMPARISON: Approach1 vs Optimized Approach
  * 
- * YOUR APPROACH (O(n²)):
+ * APPROACH1 (O(n²)):
  * ➕ Pros: Easy to understand, straightforward logic
  * ➖ Cons: Inefficient for large strings, nested loops
  * 
@@ -138,7 +138,7 @@ console.log("Expected: null, Got:", firstNonRepeatingChar(""));
 console.log("");
 
 /**
- * 💭 KEY INSIGHTS FOR YOUR GROWTH:
+ * 💭 KEY INSIGHTS:
  * 
  * 🎯 ALGORITHM OPTIMIZATION:
  * - Always consider time complexity when solving problems
