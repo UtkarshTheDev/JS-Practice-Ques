@@ -29,4 +29,4 @@ firstNonRepeatingChar("")               // null
 
 #### Status
 
-- [] Done
+- [x] Done ✅
