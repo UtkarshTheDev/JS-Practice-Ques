@@ -8,22 +8,17 @@
 
 const moveZeros = (arr)=>{
     let pointer1 = 0
-    let pointer2 = 1
 
-    do{
-        if(arr[pointer1] !=0){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i] !== 0){
+            arr[pointer1] = arr[i]
             pointer1++
         }
-        else if(arr[pointer2] ==0 || pointer1>pointer2){
-            pointer2++
-        }
-        else if(arr[pointer1] == 0 && arr[pointer2] !=0){
-            arr[pointer1] = arr[pointer2]
-            arr[pointer2] = 0
-            pointer1++
-            pointer2++
-        }
-    }while(pointer2 < arr.length)
+    }
+
+    for(let i=pointer1;i<arr.length;i++){
+        arr[i] = 0
+    }
     return arr
 }
 
