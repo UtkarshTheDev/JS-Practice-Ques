@@ -5,46 +5,38 @@
  * Move all 0s to the end of the array without changing the order of other elements.
  * In-place solution required.
  * 
+ * 💭 THOUGHT PROCESS:
+ * - Need to preserve order of non-zero elements (stable partitioning)
+ * - In-place means O(1) extra space, can't create new array
+ * - Could swap elements but that's complex and unnecessary
+ * - Better approach: "compact" non-zeros to front, then fill zeros at end
+ * - This is essentially a two-phase process
+ * 
  * 💡 APPROACH:
- * Use a "Two-Phase" strategy with one pointer + iterator:
- * 1. First pass: Collect all non-zero elements at the front
+ * Two-Phase Strategy with insertion pointer:
+ * 1. First pass: Move all non-zeros to front of array
  * 2. Second pass: Fill remaining positions with zeros
  * 
  * 🎯 KEY INSIGHT:
- * Instead of complex swapping, we "compact" non-zeros to the left,
- * then fill the right side with zeros. Simple and efficient!
+ * Use an "insertPos" pointer to track where the next non-zero should go.
+ * This avoids complex swapping logic and keeps solution simple.
  * 
- * ⏰ Time Complexity: O(n) - Single pass through array
- * 💾 Space Complexity: O(1) - In-place modification
+ * ⏰ Time Complexity: O(n) - Two passes through array
+ * 💾 Space Complexity: O(1) - Only using one extra variable
  */
 
 const moveZeros = (arr) => {
-    /**
-     * 🎯 PHASE 1: Collect all non-zero elements
-     * 
-     * Strategy: Use 'insertPos' as our "insertion pointer"
-     * - It tracks WHERE the next non-zero element should be placed
-     * - We iterate through the array and "pack" non-zeros to the front
-     */
-    let insertPos = 0; // Position where next non-zero should go
+    let insertPos = 0; // Tracks where next non-zero element should be placed
     
-    // Scan entire array looking for non-zero elements
+    // Phase 1: Collect all non-zero elements at the front
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] !== 0) {
-            // Found non-zero: place it at current insertion position
             arr[insertPos] = arr[i];
-            insertPos++; // Move insertion position forward
+            insertPos++;
         }
-        // Skip zeros - they'll be handled in Phase 2
     }
     
-    /**
-     * 🎯 PHASE 2: Fill remaining positions with zeros
-     * 
-     * At this point:
-     * - All non-zeros are packed at positions [0...insertPos-1]
-     * - Positions [insertPos...end] need to be filled with zeros
-     */
+    // Phase 2: Fill remaining positions with zeros
     for (let i = insertPos; i < arr.length; i++) {
         arr[i] = 0;
     }
