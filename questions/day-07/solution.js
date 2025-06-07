@@ -6,12 +6,12 @@
  */
 
 const countDigits = (no)=>{
+    if (no === 0) return 1;
     let digits = 0
-    let number = no
     do{
-        number = (number/10) | 0
+        no = (no/10) | 0
         digits++
-    }while(number>0)
+    }while(no>0)
     return digits
 }
 
