@@ -26,5 +26,4 @@ countDigits(1000000)   // 7
 
 ### Status
 
-- [] Done
-
+- [x] Done

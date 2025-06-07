@@ -73,9 +73,8 @@ console.log(countDigits(1000000));   // 7 (number with trailing zeros)
  * - Limitation: Bitwise only works reliably with positive integers
  * 
  * 🔄 Alternative approaches you could consider:
- * 1. String conversion: no.toString().length (but problem forbids this)
- * 2. Logarithmic: Math.floor(Math.log10(no)) + 1 (for non-zero numbers)
- * 3. Recursive: function calls itself with no/10 until no becomes 0
+ * 1. Logarithmic: Math.floor(Math.log10(no)) + 1 (for non-zero numbers)
+ * 2. Recursive: function calls itself with no/10 until no becomes 0
  * 
  * 📈 Why this approach is good:
  * - Simple and intuitive logic
