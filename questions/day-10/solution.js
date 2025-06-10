@@ -4,25 +4,25 @@
  * Used in: Search bars, APIs, animation throttles, performance controls
  */
 
-const debounce = async (fn, timer) => {
-    const startTime = new Date();
-    let call = () => {
-        console.log("Called CAll function");
-        let gap = Math.round(new Date() - startTime);
-        console.log(gap);
-        setTimeout(fn, timer);
-    };
-    const debounced = call;
-    return function (){
-        
+const debounce = (fn, delay) => {
+    let timer = null;
+
+    return function () {
+        if (timer) {
+            clearInterval(timer);
+        }
+
+        timer = setTimeout(function () {
+            fn();
+        }, delay);
     };
 };
 
-// 🧪 Test
+// 🧪 Test 
 const log = debounce(() => {
     console.log("Debounced call fired!");
 }, 1000);
 
-log();
-log();
-log(); // only this should log after 1 second
+log(); // Called
+log(); // Called (cancels previous)
+log(); // Called (cancels previous) - Only this one should actually fire after 1 second
