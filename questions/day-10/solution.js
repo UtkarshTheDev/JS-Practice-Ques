@@ -8,16 +8,14 @@ const debounce = async (fn, timer) => {
     const startTime = new Date();
     let call = () => {
         console.log("Called CAll function");
-        let gap = Math.round(
-            new Date().getMilliseconds() - startTime.getMilliseconds(),
-        );
+        let gap = Math.round(new Date() - startTime);
         console.log(gap);
-        if (gap == timer) {
-            return fn;
-        }
+        setTimeout(fn, timer);
     };
-    setInterval(call, 1000);
-    return fn;
+    const debounced = call;
+    return function (){
+        
+    };
 };
 
 // 🧪 Test

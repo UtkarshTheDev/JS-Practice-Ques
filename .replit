@@ -1,4 +1,1 @@
 modules = ["nodejs-20"]
-
-[nix]
-packages = ["neovim", "bat"]
