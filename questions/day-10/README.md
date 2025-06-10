@@ -32,4 +32,4 @@ debouncedLog(); debouncedLog(); debouncedLog(); // Logs only once after 1s
 
 ### Status
 
-- [] Done
+- [x] Done
