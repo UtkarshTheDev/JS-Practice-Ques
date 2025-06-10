@@ -9,16 +9,16 @@ const debounce = (fn, delay) => {
 
     return function () {
         if (timer) {
-            clearInterval(timer);
+            clearTimeout(timer);
         }
 
-        timer = setTimeout(function () {
+        timer = setTimeout(() => {
             fn();
         }, delay);
     };
 };
 
-// 🧪 Test 
+// 🧪 Test
 const log = debounce(() => {
     console.log("Debounced call fired!");
 }, 1000);
