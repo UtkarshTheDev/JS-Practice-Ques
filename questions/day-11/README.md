@@ -29,4 +29,4 @@ emitter.emit("boot"); // not called
 
 ### Status
 
-- **[] Done**
+- **[x] Done**
