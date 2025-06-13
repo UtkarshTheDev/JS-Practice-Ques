@@ -1,36 +1,43 @@
-## Day 12 - Custom Array Filter
+# Day 12 - Custom `filter` Polyfill
 
-### Problem
-Implement a custom version of JavaScript's `Array.prototype.filter()` called `myFilter`.
+## ✅ Goal
+Build your own version of JavaScript’s built-in `filter()` using `Array.prototype`.
 
-### Features
-- Works like native `.filter`
-- Accepts optional `thisArg`
-- Returns new filtered array
+## 📌 Features
+- Works like native `.filter()`
+- Accepts a `thisArg` as second argument
+- Handles sparse arrays
+- Returns a new filtered array
 
-### Example
+## 🧠 Function Signature
+
 ```js
-[1,2,3].myFilter(x => x > 1) // [2, 3]
+Array.prototype.myFilter = function(callback, thisArg) {
+  // your implementation
+};
 ```
-### 📦 Requirements:
 
-- **Do not use .filter() internally.**
+### 📈 Example
 
-- **Use a for loop to iterate over this.**
+```js
+[1, 2, 3, 4].myFilter(x => x > 2); // [3, 4]
 
-- **Return a new array with elements where callback(element, index, array) returns true.**
+const ctx = { min: 3 };
+[1, 2, 3, 4, 5].myFilter(function(x) {
+  return x >= this.min;
+}, ctx); // [3, 4, 5]
+```
 
-- **Support an optional thisArg to bind the this value inside the callback.**
+### 💡 Concepts Used
 
+ - **Array prototype manipulation**
 
-### Learning
+- **Callback execution and control**
 
-- **Array Prototypes**
+- **Function context (thisArg)**
 
-- **Callbacks and this**
-
-- **Writing polyfills**
+- **Polyfill architecture**
 
 ### Status
 
-- **[] Done**
+- [] Done
