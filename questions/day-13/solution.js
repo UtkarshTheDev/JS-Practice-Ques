@@ -8,17 +8,21 @@ function customPromiseAll(promises) {
   // Your implementation here
   if (promises.length < 1) return Promise.resolve([]);
 
-  let results = [];
-
-  promises.forEach((promise,index)=>{
-    Promise.resolve(promise).then((result)=>{
-        results[index] = result;
-    }).catch((err)=>{
-        return err;
+  return new Promise((resolve, reject) => {
+    let results = [];
+    promises.forEach((promise,index)=>{
+      Promise.resolve(promise)
+          .then(result=>{
+              results[index] = result;
+              if(results.length +1 === promises.length){
+                  resolve(results);
+              }
+          })
+          .catch((err)=>{
+            reject(err); // Stop resolving promises
+          });
     });
   });
-
-  return Promise.resolve(results);
 }
 
 // Test Case 1: All promises resolve
