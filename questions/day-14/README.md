@@ -34,4 +34,4 @@ log(); log(); // Only the first one executes immediately
 
 ### Status
 
-- [] Done
+- [x] Done
