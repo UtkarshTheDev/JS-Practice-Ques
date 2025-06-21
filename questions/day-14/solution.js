@@ -1,11 +1,11 @@
 // 🚀 Day 14 – Throttle Function Implementation
 
 const throttle = (fn,delay)=>{
-    const last = 0
+    let last = 0
 
     return function (...args) {
         const now = Date.now()
-        if (now - last === delay){
+        if (now - last >= delay){
             last = Date.now()
              fn.apply(this, args);
         }
