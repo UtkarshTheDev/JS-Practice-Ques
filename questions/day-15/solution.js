@@ -21,3 +21,18 @@ function retry(fn, retries, delay) {
     });
   };
 }
+
+let attempt = 0;
+
+const unstable = () =>
+  new Promise((resolve, reject) => {
+    attempt++;
+    console.log('Attempt:', attempt);
+    attempt < 3 ? reject("Fail") : resolve("Success");
+  });
+
+const retryable = retry(unstable, 5, 1000);
+
+retryable()
+  .then(console.log)
+  .catch(console.error);
