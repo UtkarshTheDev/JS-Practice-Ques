@@ -33,4 +33,4 @@ retryFn().catch(console.error); // Will retry 3 times
 - Delays & retry logic
 
 ### Status
-- [] Done
+- [x] Done
